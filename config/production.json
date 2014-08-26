@@ -1,0 +1,77 @@
+{
+    "app": {
+        "port": 3004,
+        "domain": "emask.com",
+        "folder": "/var/www/emask"
+    },
+    "mongoDb": {
+        "database": "emask",
+        "connectString": "mongodb://localhost:27017/emask",
+        "indexes": []
+    },
+    "morgan": {
+        "immediate": true,
+        "format": "dev"
+    },
+    "urlencoded": {
+        "extended": true,
+        "limit": "50mb"
+    },
+    "json": {
+        "limit": "50mb"
+    },
+    "session": {
+        "secret": "S3kr3t",
+        "saveUninitialized": true,
+        "resave": true,
+        "key": "sid"
+    },
+    "static": [
+        "/static",
+        "/minified"
+    ],
+    "routes": {
+        "src": "/application/routes"
+    },
+    "public": {
+        "title": "emask.com",
+        "javascripts": [
+            "/static/javascripts/default.js"
+        ],
+        "stylesheets": [
+            "/static/stylesheets/default.css"
+        ],
+        "layouts": [
+            {
+                "url": "index",
+                "templates": [
+                    {
+                        "name": "template",
+                        "controller": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "private": {
+        "title": "gocard.info",
+        "javascripts": [
+            "/static/javascripts/default.js"
+        ],
+        "stylesheets": [
+            "/static/stylesheets/default.css"
+        ],
+        "layouts": [
+            {
+                "url": "index",
+                "templates": [
+                    {
+                        "name": "template",
+                        "controller": "",
+                        "type": "include"
+                    }
+                ]
+            }
+        ]
+    }
+}

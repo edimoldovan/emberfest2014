@@ -1,0 +1,98 @@
+{
+    "app": {
+        "port": 3000,
+        "domain": "node.emask.com",
+        "folder": "/Users/edimoldovan/www/emberfest2014"
+    },
+    "mongoDb": {
+        "database": "emask-localhost",
+        "connectString": "mongodb://localhost:27017/emask-localhost",
+        // "connectString": "mongodb://emberfest:emberfest@ds053148.mongolab.com:53148/emberfest",
+        "indexes": []
+    },
+    "morgan": {
+        "immediate": true,
+        "format": "dev"
+    },
+    "urlencoded": {
+        "extended": true,
+        "limit": "50mb"
+    },
+    "json": {
+        "limit": "50mb"
+    },
+    "session": {
+        "secret": "S3kr3t",
+        "saveUninitialized": true,
+        "resave": true,
+        "key": "sid"
+    },
+    "static": [
+        "/static",
+        "/minified"
+    ],
+    "routes": {
+        "src": "/application/routes"
+    },
+    "api": {
+        "rest": {
+            "baseURL": "/rest"
+        }
+    },
+    "passport": {
+        "google": {
+            "clientID": "856331898403-7qlj8dta37e6adslr6a7ngsfa5dfjo0l.apps.googleusercontent.com",
+            "clientSecret": "L29zxxcmcA1OuwOzzSAV7bBW",
+            "authURL": "/auth/google",
+            "callbackURL": "/auth/google/callback",
+            "successRedirect": "/",
+            "failureRedirect": "/login"
+        }
+    },
+    "public": {
+        "title": "emask.com",
+        "javascripts": [
+            "/static/javascripts/jquery.js",
+            "/static/javascripts/handlebars.js",
+            "/static/javascripts/ember.js",
+            "/static/javascripts/ember-data.js",
+            "/static/javascripts/default.js"
+        ],
+        "stylesheets": [
+            "/static/stylesheets/default.css"
+        ],
+        "layouts": [
+            {
+                "url": "index",
+                "templates": [
+                    {
+                        "name": "template",
+                        "controller": "",
+                        "type": "include"
+                    }
+                ]
+            }
+        ]
+    },
+    "private": {
+        "title": "gocard.info",
+        "javascripts": [
+            "/static/javascripts/default.js"
+        ],
+        "stylesheets": [
+            "/static/stylesheets/default.css"
+        ],
+        "layouts": [
+            {
+                "url": "index",
+                "templates": [
+                    {
+                        "name": "template",
+                        "controller": "",
+                        "type": "include"
+                    }
+                ]
+            }
+        ]
+    }
+}

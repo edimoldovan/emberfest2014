@@ -1,0 +1,16 @@
+<!doctype html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>{{title}}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{{#each stylesheets}}
+<link rel="stylesheet" href="{{this}}" type="text/css" media="screen, projection" />
+{{/each}}
+<script type="text/javascript">
+	window.settings = {};
+	window.settings.user = {};
+	window.settings.user._id = "{{user._id}}";
+</script>
+</head>
+<body class="narrow wrap">

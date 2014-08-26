@@ -1,0 +1,11 @@
+/node_modules/*
+/nbproject/*
+/pid/*
+/documentation/*
+/logs/*
+.DS_Store
+thumbs.db
+/.idea/
+
+
+pid/pid.pid

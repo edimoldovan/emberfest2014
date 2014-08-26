@@ -1,0 +1,319 @@
+$page-bg: #f9f8f3;
+$font-color: #555555;
+
+$white: #ffffff;
+$item-bg: #666666;
+$dark-gray: #322525;
+$mid-gray: #cccccc;
+$gray: #eeeeee;
+$green: #66cd00;
+$red: #e94739;
+$black: #000000;
+$subscribe: #111111;
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-decoration: none !important;
+}
+
+html {
+	background-color: $white;
+	height: 100%;
+}
+
+body {
+	background-color: $white;
+	font-size: 16px !important;
+	font-family: helvetica, arial, sans-serif !important;
+	font-weight: normal;
+	height: 100%;
+
+	> div {
+		height: 100%;
+		display: block;
+	}
+}
+
+h1 {
+	font-size: 2rem !important;
+	font-weight: normal;
+	padding: 0.5rem;
+	color: $font-color !important;
+	font-family: helvetica, arial, sans-serif !important;
+	font-weight: normal !important;
+	line-height: inherit !important;
+	letter-spacing: inherit !important;
+}
+
+textarea,
+input[type=text] {
+	font-size: 1rem;
+	padding: 0.5rem;
+	border: 1px solid $dark-gray;
+	font-family: helvetica, arial, sans-serif !important;
+}
+
+.login {
+	display: block;
+	width: 30rem;
+	margin: 8rem auto;
+	background-color: $page-bg;
+	text-align: center;
+
+	a {
+		display: inline-block;
+		background: url("/static/images/g-plus-button/base.png") no-repeat;
+		width: 197px;
+		height: 42px;
+		margin: 5rem auto;
+	}
+
+	a:hover {
+		background: url("/static/images/g-plus-button/hover.png") no-repeat;
+	}
+
+	a:active {
+		background: url("/static/images/g-plus-button/press.png") no-repeat;
+	}
+}
+
+.logout-button {
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+	color: $red;
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	border: 1px solid $red;
+	background-color: $white;	
+}
+
+.app-container {
+	diaplay: block;
+	margin: 0 auto;
+	max-width: 80rem;
+	height: 100%;
+
+	> h1 {
+		float: left;
+		width: 69rem;
+		text-align: center;
+		padding: 20rem 0;
+	}
+}
+
+.side {
+	position: relative;
+	float: left;
+	background-color: $dark-gray;
+	height: 100%;
+	width: 9.5rem;
+
+	.item {
+		float: left;
+		padding: 1rem 0 1rem 1rem;
+		clear: both;
+		color: $white;
+		width: 9rem;
+	}
+
+	.item.active {
+		background-color: $item-bg;
+	}
+}
+
+.list {
+	float: left;
+	position: relative;
+	background-color: $page-bg;
+	height: 100%;
+	width: 25rem;
+
+	header {
+		float: left;
+		width: 100%;
+
+		h1 {
+			float: left;
+			color: $black;
+			padding: 1.2rem 1rem;
+		}
+
+		a {
+			float: right;
+			padding: 1rem;
+			color: $font-color;
+			margin: 0.7rem 0;
+		}
+	}
+
+	ul {
+		float: left;
+		overflow-y: scroll;
+		height: 90%;
+		width: 100%;
+
+		li {
+			float: left;
+			width: 100%;
+
+			a {
+				float: left;
+				background-color: transparent;
+				padding: 0.7rem 0;
+				border-top: 1px solid $mid-gray;
+				border-bottom: 1px solid transparent;
+				width: 100%;
+
+				span {
+					float: left;
+					clear: both;
+					padding: 0 0.7rem;
+				}
+
+				span.title,
+				span.from {
+					line-height: 1.2rem;
+					font-size: 1.1rem;
+					color: $black;
+				}
+
+				span.description,
+				span.subject {
+					line-height: 1.1rem;
+					font-size: 0.9rem;
+					color: $black;
+				}
+
+				span.snippet {
+					line-height: 1.2rem;
+					font-size: 0.9rem;
+					color: $black;
+				}
+			}
+
+			a:hover {
+				border-top: 1px solid $dark-gray;
+				border-bottom: 1px solid $dark-gray;
+			}
+
+			a.active {
+				background-color: $gray;
+				border-top: 1px solid $dark-gray;
+				border-bottom: 1px solid $dark-gray;
+			}
+		}
+	}
+}
+
+.detail {
+	float: left;
+	background-color: $white;
+	width: 43.5rem;
+	height: 100%;
+	overflow-y: scroll;
+
+	header {
+		float: left;
+		width: 95%;
+		
+		a {
+			float: left;
+			padding: 1rem;
+			margin: 0.7rem 0;
+			color: $font-color;
+		}
+	}
+
+	> h1 {
+		float: left;
+		width: 43rem;
+		text-align: center;
+		padding: 20rem 0;
+	}
+
+	.from {
+		font-size: 1.2rem;
+		float: left;
+		padding: 1rem;
+	}
+
+	.subject {
+		font-size: 1.5rem !important;
+		float: left;
+		padding: 1rem;
+	}
+
+	.body {
+		border-top: 1px solid $dark-gray;
+		padding: 1rem;
+		float: left;
+		width: 92%;
+	}
+
+	.compose {
+		float: left;
+
+		input[type=text] {
+			float: left;
+			margin: 1rem 1rem 0 1rem;
+			width: 40rem;
+			clear: both;
+		}
+
+		textarea {
+			float: left;
+			margin: 1rem 1rem 0 1rem;
+			width: 40rem;
+			clear: both;
+			height: 10rem;
+		}
+
+		a {
+			float: left;
+			padding: 1rem;
+			background-color: $green;
+			margin: 1rem;
+			color: $white;
+			font-weight: bold;
+		}
+	}
+
+	.project {
+		float: left;
+		width: 95%;
+		background-color: $gray;
+		border-top: 1px solid $mid-gray;
+		border-bottom: 1px solid $mid-gray;
+
+		.title {
+			float: left;
+			padding: 1rem;
+			font-size: 2rem;
+			width: 95%;
+		}
+
+		.description {
+			float: left;
+			padding: 1rem;
+			width: 95%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

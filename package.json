@@ -1,0 +1,27 @@
+{
+  "name": "emask",
+  "dependencies": {
+    "express": "latest",
+    "connect": "latest",
+    "compression": "latest",
+    "confit": "latest",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "express-session": "latest",
+    "morgan": "latest",
+    "bcrypt-nodejs": "latest",
+    "consolidate": "latest",
+    "handlebars": "latest",
+    "mongodb": "latest",
+    "connect-mongo": "latest",
+    "node-sass": "latest",
+    "express-minify": "latest",
+    "shelljs": "latest",
+    "passport": "latest",
+    "passport-google-oauth": "latest",
+    "googleapis": "latest",
+    "base64url": "latest",
+    "btoa": "latest",
+    "async": "latest"
+  }
+}
