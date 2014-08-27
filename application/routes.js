@@ -145,7 +145,7 @@ module.exports = function(app) {
 			res.end("Unused");
 		} else {
 			documents.update(req.params.namespace, req.params.id, req.body[namespaces[req.params.namespace].singular], function(results) {
-				output[namespaces[req.params.namespace].plural] = results;
+				output[namespaces[req.params.namespace].plural] = [];
 				res.end(JSON.stringify(output));
 			});
 		}
