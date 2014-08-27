@@ -1,0 +1,148 @@
+<script type="text/x-handlebars" id="application">
+	<div class="app-container">
+		{{#if user}}
+			<div class="side">
+				{{#link-to "inbox" class="item"}}Inbox{{/link-to}}
+				{{#link-to "projects" class="item"}}Projects{{/link-to}}
+				<a class="logout-button" href="/logout">Logout</a>
+			</div>
+		{{/if}}
+		{{outlet}}
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="login">
+	<div class="login">
+		<a href="/auth/google"></a>
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="index">
+	<h1>Please choose a folder on the left.</h1>
+</script>
+
+<script type="text/x-handlebars" id="inbox">
+	<div class="list">
+		<header>
+			<h1>Inbox</h1>
+			{{#link-to "inbox.compose"}}Compose{{/link-to}}
+		</header>
+		<ul>
+			{{#each thread in model}}
+				<li>
+					{{#link-to "inbox.detail" thread}}
+						<span class="from">{{thread.from}}</span>
+						<span class="subject">{{thread.subject}}</span>
+						<span class="snippet">{{thread.snippet}}</span>
+					{{/link-to}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="inbox/index">
+	<div class="detail">
+		<h1>Please choose an inbox item on the left.</h1>
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="inbox/compose">
+	<div class="detail">
+		<div class="compose">
+			{{input tpe="text" placeholder="Send to" value=model.to}}
+			{{input tpe="text" placeholder="Subject" value=model.subject}}
+			{{textarea tpe="text" placeholder="Email body" value=model.body}}
+			<a href="" {{action "sendMessage" model}}>Send message</a>
+		</div>
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="inbox/detail">
+	<div class="detail">
+		<header>
+			<a href="" {{action "convertToProject" model}}>Convert to project</a>
+		</header>
+		<div class="subject">{{model.subject}}</div>
+		{{#if model.htmlMessages}}
+			{{#each message in model.htmlMessages}}
+				<div class="from">{{model.from}}</div>
+				<div class="body">{{{message}}}</div>
+			{{/each}}
+		{{else}}
+			{{#each message in model.textMessages}}
+				<div class="from">{{model.from}}</div>
+				<div class="body">{{{message}}}</div>
+			{{/each}}
+		{{/if}}
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="inbox/convert">
+	<div class="detail">
+		<header>
+			<a href="" {{action "save"}}>Save</a>
+		</header>
+		<div class="project">
+			{{view App.ContenteditableView valueBinding="model.title" editable="true" class="title"}}
+			{{view App.ContenteditableView valueBinding="model.description" editable="true" class="description"}}
+		</div>
+		<div class="subject">{{model.subject}}</div>
+		{{#if model.htmlMessages}}
+			{{#each message in model.htmlMessages}}
+				<div class="from">{{model.from}}</div>
+				<div class="body">{{{message}}}</div>
+			{{/each}}
+		{{else}}
+			{{#each message in model.textMessages}}
+				<div class="from">{{model.from}}</div>
+				<div class="body">{{{message}}}</div>
+			{{/each}}
+		{{/if}}
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="projects/index">
+	<div class="detail">
+		<h1>Please choose a project on the left.</h1>
+	</div>
+</script>
+
+<script type="text/x-handlebars" id="projects">
+	<div class="list">
+		<header>
+			<h1>Projects</h1>
+		</header>
+		<ul>
+			{{#each project in model}}
+				<li>
+					{{#link-to "projects.detail" project}}
+						<span class="title">{{project.title}}</span>
+					{{/link-to}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="projects/detail">
+	<div class="detail">
+		<header>
+			<a href="" {{action "save" model}}>Save</a>
+			<a href="" {{action "delete" model}}>Delete</a>
+		</header>
+		<div class="project">
+			{{view App.ContenteditableView valueBinding="model.title" editable="true" class="title"}}
+			{{view App.ContenteditableView valueBinding="model.description" editable="true" class="description"}}
+		</div>
+	</div>
+</script>
+
+
+
+
+
+
+

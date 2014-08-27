@@ -20,9 +20,9 @@ var env = process.env.NODE_ENV || "development",
 	sass = require("node-sass"),
 	minify = require("express-minify"),
 	passport = require("passport"),
-	GoogleStrategy = require("passport-google-oauth").OAuth2Strategy
+	GoogleStrategy = require("passport-google-oauth").OAuth2Strategy,
 
-	documents = require("application/models/documents") (),
+	documents = require("./application/models/documents") (),
 
 	app = express(),
 	basedir = __dirname + "/config";
@@ -30,6 +30,8 @@ var env = process.env.NODE_ENV || "development",
 confit(basedir).create(function (error, config) {
 
 	app.config = config;
+
+	console.log(config.get("mongoDb:connectString"));
 
 	MongoClient.connect(config.get("mongoDb:connectString"), function(error, db) {
 		if (error) {
